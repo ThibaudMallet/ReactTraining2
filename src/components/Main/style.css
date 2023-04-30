@@ -1,0 +1,16 @@
+.main {
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  color: #bb5432;
+  background-color: #fff;
+  overflow: auto;
+}
+
+.main__title {
+  font-weight: 700;
+  font-size: 1.5em;
+  border-bottom: 0.1px solid #f1c5b6;
+  padding: 0.8em 1em;
+}

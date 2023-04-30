@@ -1,0 +1,11 @@
+.list {
+  text-decoration: none;
+}
+
+.list__item {
+  font-weight: 300;
+  font-size: 1.2em;
+  border-bottom: 0.1px solid #f1c5b6;
+  padding: 0.4em 1.1em;
+}
+
