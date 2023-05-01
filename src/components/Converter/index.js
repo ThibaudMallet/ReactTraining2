@@ -9,6 +9,7 @@ import './styles.scss';
 import Header from '../Header';
 import Amount from '../Amount';
 import Currencies from '../Currencies';
+import Toggle from '../Toggle';
 
 class Converter extends React.Component {
   constructor(props) {
@@ -32,7 +33,7 @@ class Converter extends React.Component {
     return (
       <div className="converter">
         <Header baseAmount={1} />
-        <button type="button" onClick={this.handleToggle}>Toggle</button>
+        <Toggle isOpen={isOpen} toggle={this.handleToggle} />
         {isOpen && <Currencies currencies={currenciesData} />}
         <Amount currency="United States Dollar" value={1.09} />
       </div>
