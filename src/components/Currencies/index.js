@@ -6,7 +6,12 @@ import Currency from './Currency';
 import './style.scss';
 
 // == Composant
-function Currencies({ currencies, handleClick }) {
+function Currencies({
+  currencies,
+  handleClick,
+  value,
+  handleChange,
+}) {
   return (
     <main className="main">
       <h2 className="main__title">Currencies</h2>
@@ -14,6 +19,8 @@ function Currencies({ currencies, handleClick }) {
         className="main__search"
         type="text"
         placeholder="Rechercher"
+        value={value}
+        onChange={handleChange}
       />
       <ul>
         {
@@ -28,6 +35,8 @@ function Currencies({ currencies, handleClick }) {
 
 Currencies.propTypes = {
   handleClick: PropTypesLib.func.isRequired,
+  handleChange: PropTypesLib.func.isRequired,
+  value: PropTypesLib.string.isRequired,
   currencies: PropTypesLib.arrayOf(
     PropTypesLib.shape({
       name: PropTypesLib.string.isRequired,
