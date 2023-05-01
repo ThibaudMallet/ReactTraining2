@@ -25,6 +25,26 @@ class Converter extends React.Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
+  componentDidMount() {
+    this.updateTitle();
+    document.addEventListener('keyup', (event) => {
+      if (event.key === 'Escape') {
+        this.setState({
+          isOpen: false,
+        });
+      }
+    });
+  }
+
+  componentDidUpdate() {
+    this.updateTitle();
+  }
+
+  updateTitle = () => {
+    const { currency } = this.state;
+    document.title = `Converter - ${currency}`;
+  };
+
   makeConversion = () => {
     const { currency, baseAmount } = this.state;
     const currencyData = currenciesData.find((data) => data.name === currency);
