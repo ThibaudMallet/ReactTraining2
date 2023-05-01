@@ -2,6 +2,7 @@
 import PropTypesLib from 'prop-types';
 
 // == Import locaux
+import Currency from './Currency';
 import './style.scss';
 
 // == Composant
@@ -12,7 +13,7 @@ function Currencies({ currencies }) {
       <ul>
         {
           currencies.map(
-            (currency) => <li className="main__currency" key={currency.name}>{currency.name}</li>,
+            (currency) => <Currency key={currency.name} {...currency} />,
           )
         }
       </ul>
