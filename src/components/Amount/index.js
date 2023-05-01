@@ -5,7 +5,7 @@ import PropTypesLib from 'prop-types';
 import './style.scss';
 
 // == Composant
-function Footer({ currency, value }) {
+function Amount({ currency, value }) {
   return (
     <footer className="footer">
       <p className="footer__result">{value}</p>
@@ -14,10 +14,10 @@ function Footer({ currency, value }) {
   );
 }
 
-Footer.propTypes = {
+Amount.propTypes = {
   currency: PropTypesLib.string.isRequired,
   value: PropTypesLib.number.isRequired,
 };
 
 // == Export
-export default Footer;
+export default Amount;
