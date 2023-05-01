@@ -1,3 +1,6 @@
+// == Import npm
+import React from 'react';
+
 // == Import locaux
 import currenciesData from 'src/data/currencies';
 
@@ -7,15 +10,25 @@ import Header from '../Header';
 import Amount from '../Amount';
 import Currencies from '../Currencies';
 
-// == Composant
-function Converter() {
-  return (
-    <div className="app">
-      <Header baseAmount={1} />
-      <Currencies currencies={currenciesData} />
-      <Amount currency="United States Dollar" value={1.09} />
-    </div>
-  );
+class Converter extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isOpen: true,
+    };
+  }
+
+  render() {
+    const { isOpen } = this.state;
+
+    return (
+      <div className="converter">
+        <Header baseAmount={1} />
+        {isOpen && <Currencies currencies={currenciesData} />}
+        <Amount currency="United States Dollar" value={1.09} />
+      </div>
+    );
+  }
 }
 
 // == Export
