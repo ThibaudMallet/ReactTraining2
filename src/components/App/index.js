@@ -10,7 +10,7 @@ function App() {
     <div className="app">
       <Header baseAmount={1} />
       <Main />
-      <Footer />
+      <Footer currency="United States Dollar" value={1.09} />
     </div>
   );
 }
