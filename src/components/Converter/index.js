@@ -38,12 +38,14 @@ class Converter extends React.Component {
     });
   };
 
-  handleClick = () => {
-    console.log(this);
+  handleClick = (event) => {
+    this.setState({
+      currency: event.target.textContent,
+    });
   };
 
   render() {
-    const { isOpen } = this.state;
+    const { isOpen, currency } = this.state;
     const convertedAmount = this.makeConversion();
 
     return (
@@ -51,7 +53,7 @@ class Converter extends React.Component {
         <Header baseAmount={1} />
         <Toggle isOpen={isOpen} toggle={this.handleToggle} />
         {isOpen && <Currencies currencies={currenciesData} handleClick={this.handleClick} />}
-        <Amount currency="United States Dollar" value={convertedAmount} />
+        <Amount currency={currency} value={convertedAmount} />
       </div>
     );
   }
