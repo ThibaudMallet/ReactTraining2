@@ -52,9 +52,28 @@ class Converter extends React.Component {
     });
   };
 
+  getCurrencies = () => {
+    const { inputValue } = this.state;
+    let filteredCurrencies = currenciesData;
+    const lowerCaseInputValue = inputValue.toLowerCase();
+
+    if (lowerCaseInputValue.length > 0) {
+      filteredCurrencies = currenciesData.filter(
+        (currency) => {
+          const lowerCaseCurrencyName = currency.name.toLowerCase();
+
+          return lowerCaseCurrencyName.includes(lowerCaseInputValue);
+        },
+      );
+    }
+
+    return filteredCurrencies;
+  };
+
   render() {
     const { isOpen, currency, inputValue } = this.state;
     const convertedAmount = this.makeConversion();
+    const filteredCurrencies = this.getCurrencies();
 
     return (
       <div className="converter">
@@ -62,7 +81,7 @@ class Converter extends React.Component {
         <Toggle isOpen={isOpen} toggle={this.handleToggle} />
         {isOpen && (
           <Currencies
-            currencies={currenciesData}
+            currencies={filteredCurrencies}
             handleClick={this.handleClick}
             value={inputValue}
             handleChange={this.handleChange}
