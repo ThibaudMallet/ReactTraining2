@@ -1,12 +1,12 @@
 // == Import
-import './style.css';
+import './style.scss';
 
 // == Composant
 function Header() {
   return (
     <header className="header">
       <h1 className="header__title">Converter</h1>
-      <p className="header_text">1 euro</p>
+      <p className="header__text">1 euro</p>
     </header>
   );
 }

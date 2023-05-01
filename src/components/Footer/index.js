@@ -1,5 +1,5 @@
 // == Import
-import './style.css';
+import './style.scss';
 
 // == Composant
 function Footer() {

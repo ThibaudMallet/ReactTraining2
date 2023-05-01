@@ -1,11 +1,12 @@
+@use 'src/styles/vars';
+
 .app {
-  background-color: #f1c5b6;
+  background-color: vars.$color-alt;
   display: flex;
   flex-direction: column;
   height: 800px;
   width: 400px;
   margin: auto;
   margin-top: 20vh;
-  font-family: 'League Spartan', sans-serif;
-  padding: 1em;
+  padding: vars.$gutter * 1.5;
 }

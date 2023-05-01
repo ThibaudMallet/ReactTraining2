@@ -1,5 +1,5 @@
 // == Import
-import './style.css';
+import './style.scss';
 import ListItems from './ListItem';
 
 // == Composant
