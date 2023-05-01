@@ -16,7 +16,15 @@ class Converter extends React.Component {
     this.state = {
       isOpen: true,
     };
+    this.handleToggle = this.handleToggle.bind(this);
   }
+
+  handleToggle = () => {
+    const { isOpen } = this.state;
+    this.setState({
+      isOpen: !isOpen,
+    });
+  };
 
   render() {
     const { isOpen } = this.state;
@@ -24,6 +32,7 @@ class Converter extends React.Component {
     return (
       <div className="converter">
         <Header baseAmount={1} />
+        <button type="button" onClick={this.handleToggle}>Toggle</button>
         {isOpen && <Currencies currencies={currenciesData} />}
         <Amount currency="United States Dollar" value={1.09} />
       </div>
