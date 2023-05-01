@@ -28,5 +28,17 @@
       cursor: pointer;
       transition-duration: vars.$transition-fast;
     }
-  } 
+  }
+
+  &__search {
+    padding: vars.$gutter;
+    margin-top: vars.$gutter;
+    width: 100%;
+    border: none;
+    color: vars.$color;
+    font: inherit;
+    &::placeholder {
+      color: vars.$color-alt;
+    }
+  }
 }

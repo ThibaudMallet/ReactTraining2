@@ -9,7 +9,12 @@ import './style.scss';
 function Currencies({ currencies, handleClick }) {
   return (
     <main className="main">
-      <h1 className="main__title">Currencies</h1>
+      <h2 className="main__title">Currencies</h2>
+      <input
+        className="main__search"
+        type="text"
+        placeholder="Rechercher"
+      />
       <ul>
         {
           currencies.map(
